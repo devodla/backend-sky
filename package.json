@@ -1,0 +1,7 @@
+{
+  "name": "backend-sky",
+  "version": "0.0.1",
+  "main": "index.js",
+  "author": "Reynaldo Layme <layme.reynaldo@icloud.com>",
+  "license": "MIT"
+}
