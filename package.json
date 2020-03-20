@@ -5,7 +5,8 @@
   "author": "Reynaldo Layme <layme.reynaldo@icloud.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon src/server.js"
+    "dev": "nodemon src/server.js",
+    "dev:debug": "nodemon --inspect src/server.js"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
