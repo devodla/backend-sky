@@ -9,7 +9,7 @@ class Database {
     this.mongoConnection = connect(process.env.MONGO_URL, {
       useCreateIndex: true,
       useNewUrlParser: true,
-      useFindAndModify: true,
+      useFindAndModify: false,
       useUnifiedTopology: true,
     });
   }
