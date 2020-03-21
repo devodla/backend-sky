@@ -1,11 +1,11 @@
 import { Schema, model } from 'mongoose';
 import bcrypt from 'bcryptjs';
-import { v5 as uuid5 } from 'uuid';
+import { v4 as uuid4 } from 'uuid';
 
 const userSchema = new Schema({
   _id: {
     type: String,
-    default: uuid5,
+    default: uuid4,
   },
   nome: {
     type: String,
@@ -52,11 +52,11 @@ const userSchema = new Schema({
 });
 
 userSchema.methods.cryptPass = async password => {
-  const salt = await bcrypt.getSalt(5); // Quantidade steps
+  const salt = await bcrypt.genSalt(5); // Quantidade steps
   return bcrypt.hash(password, salt);
 };
 
-userSchema.methods.verifyPass = async password => {
+userSchema.methods.verifyPass = function verifyPass(password) {
   return bcrypt.compare(password, this.senha);
 };
 

@@ -7,6 +7,7 @@ class Database {
 
   init() {
     this.mongoConnection = connect(process.env.MONGO_URL, {
+      useCreateIndex: true,
       useNewUrlParser: true,
       useFindAndModify: true,
       useUnifiedTopology: true,
