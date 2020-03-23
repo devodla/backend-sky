@@ -1,7 +1,4 @@
-import jwt from 'jsonwebtoken';
-
 import User from '../schemas/User';
-import authConfig from '../../config/auth';
 
 class UserController {
   async store(req, res) {
@@ -22,22 +19,11 @@ class UserController {
       telefones,
     });
 
-    user.senha = await user.cryptPass(user.senha);
+    await user.save();
 
-    user.token = jwt.sign({ id: user._id }, authConfig.secret, {
-      expiresIn: authConfig.experisIn,
-    });
+    const resUser = await User.findOne({ email }, { senha: 0, __v: 0 });
 
-    await user.save((err, results) => {
-      if (err) {
-        return res
-          .status(404)
-          .json({ mensagem: 'mensagem de erro', erro: err });
-      }
-      return results;
-    });
-
-    return res.status(200).json(user);
+    return res.status(200).json(resUser);
   }
 }
 
