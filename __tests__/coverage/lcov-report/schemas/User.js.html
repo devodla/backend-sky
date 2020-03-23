@@ -20,31 +20,31 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>0/20</span>
+        <span class='fraction'>20/20</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>0/4</span>
+        <span class='fraction'>4/4</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>0/3</span>
+        <span class='fraction'>3/3</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>0/15</span>
+        <span class='fraction'>15/15</span>
       </div>
     </div>
     <p class="quiet">
       Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
     </p>
   </div>
-  <div class='status-line low'></div>
+  <div class='status-line high'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -121,16 +121,14 @@
 <a name='L73'></a><a href='#L73'>73</a>
 <a name='L74'></a><a href='#L74'>74</a>
 <a name='L75'></a><a href='#L75'>75</a>
-<a name='L76'></a><a href='#L76'>76</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<a name='L76'></a><a href='#L76'>76</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -181,29 +179,31 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Schema, model <span class="fstat-no" title="function not covered" >} from 'mongoose';<span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ></span></span></span></span>
-import bcrypt fr<span class="cstat-no" title="statement not covered" >om 'bcryptjs';<span class="cstat-no" title="statement not covered" ></span></span>
-import { v4 <span class="cstat-no" title="statement not covered" >as uuid4 } from </span>'uuid';
-import jwt from 'jso<span class="cstat-no" title="statement not covered" >nwebtoken';<span class="cstat-no" title="statement not covered" ></span></span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Schema, model } from 'mongoose';
+import bcrypt from 'bcryptjs';
+import { v4 as uuid4 } from 'uuid';
+import jwt from 'jsonwebtoken';
 &nbsp;
-import authC<span class="cstat-no" title="statement not covered" >onfig from '../../config/auth</span>';<span class="cstat-no" title="statement not covered" ></span>
+import authConfig from '../../config/auth';
 &nbsp;
-const userSchema = <span class="cstat-no" title="statement not covered" >new Schema({</span>
+const userSchema = new Schema({
   _id: {
     type: String,
     default: uuid4,
@@ -256,28 +256,28 @@ const userSchema = <span class="cstat-no" title="statement not covered" >new Sch
   },
 });
 &nbsp;
-<span class="cstat-no" title="statement not covered" >userSchema.pre('save', async function <span class="fstat-no" title="function not covered" >salvar(</span>next) {</span>
-  const doc = <span class="cstat-no" title="statement not covered" >this;</span>
-  const salt = <span class="cstat-no" title="statement not covered" >await bcrypt.genSalt(5); // Quantida</span>de steps
-<span class="cstat-no" title="statement not covered" >  doc.token = jwt.sign({ id: doc._id }, authConfig.secret, {</span>
+userSchema.pre('save', async function salvar(next) {
+  const doc = this;
+  const salt = await bcrypt.genSalt(5); // Quantidade steps
+  doc.token = jwt.sign({ id: doc._id }, authConfig.secret, {
     expiresIn: authConfig.experisIn,
   });
-<span class="cstat-no" title="statement not covered" >  doc.senha = await bcrypt.hash(doc.senha, salt);</span>
-<span class="cstat-no" title="statement not covered" >  next();</span>
+  doc.senha = await bcrypt.hash(doc.senha, salt);
+  next();
 });
 &nbsp;
-<span class="cstat-no" title="statement not covered" >userSchema.methods.verifyPass = function <span class="fstat-no" title="function not covered" >verifyPass(</span>password) {</span>
-<span class="cstat-no" title="statement not covered" >  return bcrypt.compare(password, this.senha);</span>
+userSchema.methods.verifyPass = function verifyPass(password) {
+  return bcrypt.compare(password, this.senha);
 };
 &nbsp;
-<span class="cstat-no" title="statement not covered" >export default model('User', userSchema);</span>
+export default model('User', userSchema);
 &nbsp;</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sun Mar 22 2020 23:25:57 GMT-0300 (Brasilia Standard Time)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Mon Mar 23 2020 04:00:47 GMT-0300 (Brasilia Standard Time)
 </div>
 </div>
 <script src="../prettify.js"></script>
