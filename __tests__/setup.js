@@ -1,35 +1,13 @@
-import mongoose from 'mongoose';
+import 'dotenv/config';
+import { connect } from 'mongoose';
 
-// Load schemas
-import '../src/app/schemas/User';
-
-beforeEach(done => {
-  function clearDB() {
-    mongoose.connection.collections.forEach(collection => {
-      collection.remove();
-    });
-    return done();
-  }
-
-  if (mongoose.connection.readyState === 0) {
-    mongoose.connect(
-      `mongodb://localhost:27017/${process.env.MONGO_TEST}`, // <------- IMPORTANT
-      function e(err) {
-        if (err) {
-          throw err;
-        }
-        return clearDB();
-      }
-    );
-  }
-  return clearDB();
+beforeAll(async () => {
+  this.mongoTestConnection = connect(process.env.MONGO_TEST, {
+    useCreateIndex: true,
+    useNewUrlParser: true,
+    useFindAndModify: false,
+    useUnifiedTopology: true,
+  });
 });
 
-afterEach(done => {
-  mongoose.disconnect();
-  return done();
-});
-
-afterAll(done => {
-  return done();
-});
+// afterAll(() => setTimeout(() => process.exit(), 1000));
