@@ -1,6 +1,9 @@
 import { Schema, model } from 'mongoose';
 import bcrypt from 'bcryptjs';
 import { v4 as uuid4 } from 'uuid';
+import jwt from 'jsonwebtoken';
+
+import authConfig from '../../config/auth';
 
 const userSchema = new Schema({
   _id: {
@@ -21,6 +24,10 @@ const userSchema = new Schema({
   },
   telefones: [
     {
+      _id: {
+        type: String,
+        default: uuid4,
+      },
       numero: {
         type: Number,
         required: true,
@@ -51,10 +58,15 @@ const userSchema = new Schema({
   },
 });
 
-userSchema.methods.cryptPass = async password => {
+userSchema.pre('save', async function salvar(next) {
+  const doc = this;
   const salt = await bcrypt.genSalt(5); // Quantidade steps
-  return bcrypt.hash(password, salt);
-};
+  doc.token = jwt.sign({ id: doc._id }, authConfig.secret, {
+    expiresIn: authConfig.experisIn,
+  });
+  doc.senha = await bcrypt.hash(doc.senha, salt);
+  next();
+});
 
 userSchema.methods.verifyPass = function verifyPass(password) {
   return bcrypt.compare(password, this.senha);
